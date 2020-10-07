@@ -1,4 +1,4 @@
-package com.github.cdmatta.sbconninterruptionissues;
+package com.github.cdmatta.sbconninterruptionissues.reactive;
 
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
@@ -19,10 +19,10 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 @SpringBootApplication
 @RestController
-public class SbConnInterruptionIssuesApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(SbConnInterruptionIssuesApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
     @GetMapping("/five")
@@ -34,7 +34,7 @@ public class SbConnInterruptionIssuesApplication {
     }
 
     @GetMapping("/twenty")
-    public Mono<String> forever() {
+    public Mono<String> twenty() {
         LocalDateTime start = LocalDateTime.now();
         return Mono.just("start")
                 .delayElement(Duration.ofSeconds(20))
@@ -42,7 +42,7 @@ public class SbConnInterruptionIssuesApplication {
     }
 
     @GetMapping("/fifty")
-    public Mono<String> loopy() {
+    public Mono<String> fifty() {
         LocalDateTime start = LocalDateTime.now();
         return Mono.fromRunnable(() -> {
                     for (int i = 0; i < 10; i++) {
