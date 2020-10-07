@@ -19,10 +19,10 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
 @SpringBootApplication
 @RestController
-public class Application {
+public class ReactiveApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(ReactiveApplication.class, args);
     }
 
     @GetMapping("/five")

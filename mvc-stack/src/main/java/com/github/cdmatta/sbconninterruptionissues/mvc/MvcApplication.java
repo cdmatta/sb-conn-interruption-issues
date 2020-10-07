@@ -14,10 +14,10 @@ import java.util.concurrent.ForkJoinPool;
 @SpringBootApplication
 @RestController
 @Slf4j
-public class Application {
+public class MvcApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(MvcApplication.class, args);
     }
 
     @GetMapping("/five")
